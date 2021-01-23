@@ -58,7 +58,6 @@ jobs:
     - name: Update Feeds                    # 4.下载Feeds
       run: |
         cd $WORK_PATH
-        git checkout $CLONE_VERSION
         ./scripts/feeds update -a
 
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
