@@ -57,6 +57,7 @@ echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
 
 echo '添加Lienol包'
 git clone $lienol_url package/Lienol
+echo 'luci-app-nginx-pingos'  >> .config
 
 # echo '添加Passwall'
 # echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
@@ -71,7 +72,7 @@ git clone $lienol_url package/Lienol
 echo '添加filebrowser'
 echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
-luci-app-nginx-pingos
+
 
 
 # echo '添加HelloWord,并使用包默认的配置'  # TODO 这个的配置文件和SSP 冲突
