@@ -23,7 +23,7 @@ env:
   UPLOAD_PACKAGES_DIR: true                 # 是否导出bin文件
   UPLOAD_FIRMWARE: true                # 是否导出固件
   CLONE_URL: https://github.com/coolsnowwolf/lede  # 地址
-  CLONE_BRANCH: master                 # 分支
+  CLONE_BRANCH: 69f46989e2f6ca9615836a29225caa298c4839a2  # 分支
   WORK_PATH: opt/openwrt               # 工作目录
 
 jobs:
