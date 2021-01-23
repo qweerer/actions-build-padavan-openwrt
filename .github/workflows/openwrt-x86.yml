@@ -91,6 +91,8 @@ jobs:
         make -j$(nproc) || make -j1 V=s
 
     - name: Organize Firmware                  # 8. 整理固件包
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       if: success()
       run: |
         cd $WORK_PATH/bin/targets/*/*
@@ -98,6 +100,8 @@ jobs:
         echo "::set-env name=FILE_NAME::$T_NAME-$(date "+%Y%m%d")"   # 文件名
         echo "::set-env name=FIRMWARE::$PWD"                         # Firmware 路径
     - name: Organize Packages                 # 9. 整理插件包
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       if: success()
       run: |
         cd $WORK_PATH/bin/packages
