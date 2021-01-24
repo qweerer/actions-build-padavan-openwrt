@@ -99,6 +99,7 @@ jobs:
         rm -rf packages
         echo "::set-env name=FILE_NAME::$T_NAME-$(date "+%Y%m%d")"   # 文件名
         echo "::set-env name=FIRMWARE::$PWD"                         # Firmware 路径
+        echo "::set-env name=FIRMWARE_GZ::$PWD/openwrt-x86-64-generic-squashfs-combined-efi.img.gz"  # Firmware 路径
     - name: Organize Packages                 # 9. 整理插件包
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
@@ -120,3 +121,10 @@ jobs:
       with:
         name: OpenWrt-${{env.FILE_NAME}}
         path: ${{ env.FIRMWARE }}
+
+    - name: Upload Firmware Directory        # 11. 导出固件目录
+      uses: actions/upload-artifact@master
+      if: success()
+      with:
+        name: OpenWrt-${{env.FILE_NAME}}-gz
+        path: ${{ env.FIRMWARE_GZ }}
