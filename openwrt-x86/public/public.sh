@@ -18,7 +18,7 @@ filter_url='https://github.com/destan19/OpenAppFilter.git'                    # 
 dockerman_url='git clone https://github.com/lisaac/luci-app-dockerman.git'    # package/dockerman
 # passwall_url='git clone https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol 
 allinone_url='git clone https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
-# oppackage_url='git clone https://github.com/openwrt/luci.git'                 # package/luciopenwrt
+oppackage_url='git clone https://github.com/openwrt/luci.git'                 # package/luciopenwrt
 
 # 命令
 # echo "修改机器名称"
@@ -109,13 +109,15 @@ echo 'dockerman'
 git clone $dockerman_url package/lean/dockerman
 echo 'CONFIG_PACKAGE_luci-app-dockerman=y' >> .config
 
-# CONFIG_PACKAGE_luci-app-uhttpd=y
-# CONFIG_PACKAGE_luci-app-hd-idle=y
-# # CONFIG_PACKAGE_luci-app-acme=y
-# # CONFIG_PACKAGE_luci-ssl-openssl=y
-# # CONFIG_PACKAGE_acme-dnsapi=y
-# CONFIG_PACKAGE_luci-app-minidlna=y
-# CONFIG_PACKAGE_luci-app-aria2=y
-# CONFIG_PACKAGE_luci-app-p910nd=y
-# CONFIG_PACKAGE_luci-app-sqm=y
-# CONFIG_PACKAGE_luci-app-nlbwmon=y
+echo 'openwrt-官方插件'
+git clone $oppackage_url package/lean/oppackage
+# echo 'CONFIG_PACKAGE_luci-app-uhttpd=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-hd-idle=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-acme=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-ssl-openssl=y' >> .config
+# echo 'CONFIG_PACKAGE_acme-dnsapi=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-minidlna=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-aria2=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-p910nd=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-sqm=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
