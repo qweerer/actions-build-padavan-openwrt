@@ -21,6 +21,7 @@ allinone_url='https://github.com/kenzok8/openwrt-packages.git'      # package/ke
 oppackage_url='https://github.com/openwrt/luci.git'                 # package/luciopenwrt
 smartinfo_url='https://github.com/animefansxj/luci-app-smartinfo.git'  # package/smartinfo
 # bandwidthd_url='https://github.com/AlexZhuo/luci-app-bandwidthd.git' #package/bandwidthd
+wrtbwmon_url='https://github.com/Kiougar/luci-wrtbwmon.git'  #package/wrtbwmon
 
 # 命令
 # echo "修改机器名称"
@@ -103,9 +104,9 @@ echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
 echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-advancedsetting=y' >> .config
 
 echo 'dockerman'
@@ -132,3 +133,10 @@ echo 'CONFIG_PACKAGE_luci-app-smartinfo=y' >> .config
 # echo 'bandwidthd'
 # git clone $bandwidthd_url package/lean/bandwidthd
 # echo 'CONFIG_PACKAGE_luci-app-bandwidthd=y' >> .config
+
+# echo 'wrtbwmon'
+# git clone $wrtbwmon_url package/lean/wrtbwmon
+# echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
+
+
+	
