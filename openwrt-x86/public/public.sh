@@ -126,17 +126,17 @@ echo 'CONFIG_PACKAGE_luci-app-p910nd=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-sqm=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
 
-echo 'smartinfo'
-git clone $oppackage_url package/lean/smartinfo
-echo 'CONFIG_PACKAGE_luci-app-smartinfo=y' >> .config
+# echo 'smartinfo'
+# git clone $oppackage_url package/lean/smartinfo
+# echo 'CONFIG_PACKAGE_luci-app-smartinfo=y' >> .config
 
 # echo 'bandwidthd'
 # git clone $bandwidthd_url package/lean/bandwidthd
 # echo 'CONFIG_PACKAGE_luci-app-bandwidthd=y' >> .config
 
-# echo 'wrtbwmon'
-# git clone $wrtbwmon_url package/lean/wrtbwmon
-# echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
+echo 'wrtbwmon'
+git clone $wrtbwmon_url package/lean/wrtbwmon
+echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
 
 
 	
