@@ -15,10 +15,12 @@ lienol_url='https://github.com/Lienol/openwrt-package.git'                    # 
 # vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'                          # vssr_plus 依赖
 # vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'               # vssr_plus 地址
 filter_url='https://github.com/destan19/OpenAppFilter.git'                    # AppFilter 地址
-dockerman_url='git clone https://github.com/lisaac/luci-app-dockerman.git'    # package/dockerman
-# passwall_url='git clone https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol 
-allinone_url='git clone https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
-oppackage_url='git clone https://github.com/openwrt/luci.git'                 # package/luciopenwrt
+dockerman_url='https://github.com/lisaac/luci-app-dockerman.git'    # package/dockerman
+# passwall_url='https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol 
+allinone_url='https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
+oppackage_url='https://github.com/openwrt/luci.git'                 # package/luciopenwrt
+smartinfo_url='https://github.com/animefansxj/luci-app-smartinfo.git'  # package/smartinfo
+# bandwidthd_url='https://github.com/AlexZhuo/luci-app-bandwidthd.git' #package/bandwidthd
 
 # 命令
 # echo "修改机器名称"
@@ -104,6 +106,7 @@ echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-advancedsetting=y' >> .config
 
 echo 'dockerman'
 git clone $dockerman_url package/lean/dockerman
@@ -121,3 +124,11 @@ echo 'CONFIG_PACKAGE_luci-app-aria2=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-p910nd=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-sqm=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
+
+echo 'smartinfo'
+git clone $oppackage_url package/lean/smartinfo
+echo 'CONFIG_PACKAGE_luci-app-smartinfo=y' >> .config
+
+# echo 'bandwidthd'
+# git clone $bandwidthd_url package/lean/bandwidthd
+# echo 'CONFIG_PACKAGE_luci-app-bandwidthd=y' >> .config
