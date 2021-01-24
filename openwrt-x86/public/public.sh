@@ -2,25 +2,23 @@
 # 必须的文件
 # device_name='G-DOCK'      # 设备名，放到了单独设备的sh文件中了
 # wifi_name="OpenWrt"       # Wifi 名字 ,放到了单独设备的sh文件中了
-lan_ip='192.168.2.1'        # Lan Ip地址
+lan_ip='192.168.2.2'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
 delete_bootstrap=false      # 是否删除默认主题 true 、false
-default_theme='argon_mc1'   # 默认主题 结合主题文件夹名字
-theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'               # 主题地址
+default_theme='argon'       # 默认主题 结合主题文件夹名字
 openClash_url='https://github.com/vernesong/OpenClash.git'                    # OpenClash包地址
-# adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git'   # adguardhome 包地址
 lienol_url='https://github.com/Lienol/openwrt-package.git'                    # Lienol 包地址
-# vssr_url_rely='https://github.com/jerrykuku/lua-maxminddb.git'                # vssr lua-maxminddb依赖
-# vssr_url='https://github.com/jerrykuku/luci-app-vssr.git'                     # vssr地址
-# vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'                          # vssr_plus 依赖
-# vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'               # vssr_plus 地址
+vssr_url_rely='https://github.com/jerrykuku/lua-maxminddb.git'                # vssr lua-maxminddb依赖
+vssr_url='https://github.com/jerrykuku/luci-app-vssr.git'                     # vssr地址
+vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'                          # vssr_plus 依赖
+vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'               # vssr_plus 地址
 filter_url='https://github.com/destan19/OpenAppFilter.git'                    # AppFilter 地址
 dockerman_url='https://github.com/lisaac/luci-app-dockerman.git'    # package/dockerman
-# passwall_url='https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol 
+passwall_url='https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol
 allinone_url='https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
 oppackage_url='https://github.com/openwrt/luci.git'                 # package/luciopenwrt
 smartinfo_url='https://github.com/animefansxj/luci-app-smartinfo.git'  # package/smartinfo
-# bandwidthd_url='https://github.com/AlexZhuo/luci-app-bandwidthd.git' #package/bandwidthd
+bandwidthd_url='https://github.com/AlexZhuo/luci-app-bandwidthd.git' #package/bandwidthd
 wrtbwmon_url='https://github.com/Kiougar/luci-wrtbwmon.git'  #package/wrtbwmon
 
 # 命令
@@ -56,11 +54,11 @@ git clone $openClash_url package/lean/luci-app-openclash
 
 #  OpenClash
 echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y' >> .config
 
 echo '添加Lienol包'
-git clone $lienol_url package/Lienol
-echo 'luci-app-nginx-pingos'  >> .config
+git clone $lienol_url package/lean/Lienol
+# echo 'luci-app-nginx-pingos' >> .config
 
 # echo '添加Passwall'
 # echo 'CONFIG_PACKAGE_luci-app-passwall=y' >> .config
@@ -74,7 +72,7 @@ echo 'luci-app-nginx-pingos'  >> .config
 
 echo '添加filebrowser'
 echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y' >> .config
 
 
 
@@ -100,13 +98,14 @@ echo '添加adguardhome,京东签到'
 git clone $allinone_url package/lean/allinone
 echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+echo 'CONFIG_PACKAGE_luci-theme-argon_new=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-advancedsetting=y' >> .config
 
 echo 'dockerman'
