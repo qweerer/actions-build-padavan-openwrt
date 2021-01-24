@@ -34,6 +34,29 @@ sed -i "s/192.168.2.2/$lan_ip/g" package/base-files/files/bin/config_generate
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
+echo '添加主题argon'
+git clone $theme_argon package/lean/luci-theme-argon-mc
+
+echo '添加OpenClash'
+git clone $openClash_url package/lean/luci-app-openclash
+
+echo '添加Lienol包'
+git clone $lienol_url package/lean/Lienol
+
+echo '添加adguardhome,京东签到'
+git clone $allinone_url package/lean/allinone
+
+echo 'dockerman'
+git clone $dockerman_url package/lean/dockerman
+
+echo 'openwrt-官方插件'
+git clone $oppackage_url package/lean/oppackage
+
+
+echo 'wrtbwmon'
+git clone $wrtbwmon_url package/lean/wrtbwmon
+
+
 #echo "修改默认主题"
 #sed -i "s/bootstrap/$default_theme/g" feeds/luci/modules/luci-base/root/etc/config/luci
 #
@@ -45,19 +68,19 @@ sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" packa
 #  sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 #fi
 
-echo '添加主题argon'
-git clone $theme_argon package/lean/luci-theme-argon-mc
-echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
+# echo '添加主题argon'
+# git clone $theme_argon package/lean/luci-theme-argon-mc
+# echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
-echo '添加OpenClash'
-git clone $openClash_url package/lean/luci-app-openclash
+# echo '添加OpenClash'
+# git clone $openClash_url package/lean/luci-app-openclash
 
 #  OpenClash
-echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y' >> .config
 
-echo '添加Lienol包'
-git clone $lienol_url package/lean/Lienol
+# echo '添加Lienol包'
+# git clone $lienol_url package/lean/Lienol
 # echo 'luci-app-nginx-pingos' >> .config
 
 # echo '添加Passwall'
@@ -70,9 +93,9 @@ git clone $lienol_url package/lean/Lienol
 # echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y'  >> .config
 
-echo '添加filebrowser'
-echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y' >> .config
+# echo '添加filebrowser'
+# echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y' >> .config
 
 
 
@@ -94,36 +117,36 @@ echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y' >> .config
 # git clone $vssr_plus_rely package/lean/luci-app-vssr-plus
 # echo 'CONFIG_PACKAGE_luci-app-vssr-plus=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-i18n-vssr-plus-zh-cn=y'  >> .config
-echo '添加adguardhome,京东签到'
-git clone $allinone_url package/lean/allinone
-echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-argon_new=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-advancedsetting=y' >> .config
+# echo '添加adguardhome,京东签到'
+# git clone $allinone_url package/lean/allinone
+# echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
+# # echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
+# # echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
+# # echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-argon_new=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-advancedsetting=y' >> .config
 
-echo 'dockerman'
-git clone $dockerman_url package/lean/dockerman
-echo 'CONFIG_PACKAGE_luci-app-dockerman=y' >> .config
+# echo 'dockerman'
+# git clone $dockerman_url package/lean/dockerman
+# echo 'CONFIG_PACKAGE_luci-app-dockerman=y' >> .config
 
-echo 'openwrt-官方插件'
-git clone $oppackage_url package/lean/oppackage
+# echo 'openwrt-官方插件'
+# git clone $oppackage_url package/lean/oppackage
 # echo 'CONFIG_PACKAGE_luci-app-uhttpd=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-hd-idle=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-hd-idle=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-app-acme=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-ssl-openssl=y' >> .config
 # echo 'CONFIG_PACKAGE_acme-dnsapi=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-minidlna=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-aria2=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-p910nd=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-sqm=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-minidlna=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-aria2=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-p910nd=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-sqm=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
 
 # echo 'smartinfo'
 # git clone $oppackage_url package/lean/smartinfo
@@ -133,9 +156,9 @@ echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
 # git clone $bandwidthd_url package/lean/bandwidthd
 # echo 'CONFIG_PACKAGE_luci-app-bandwidthd=y' >> .config
 
-echo 'wrtbwmon'
-git clone $wrtbwmon_url package/lean/wrtbwmon
-echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
+# echo 'wrtbwmon'
+# git clone $wrtbwmon_url package/lean/wrtbwmon
+# echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
 
 
 	
