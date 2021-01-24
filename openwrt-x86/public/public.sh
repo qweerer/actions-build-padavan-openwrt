@@ -4,7 +4,7 @@
 # wifi_name="OpenWrt"       # Wifi 名字 ,放到了单独设备的sh文件中了
 lan_ip='192.168.2.1'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
-delete_bootstrap=true       # 是否删除默认主题 true 、false
+delete_bootstrap=false      # 是否删除默认主题 true 、false
 default_theme='argon_mc1'   # 默认主题 结合主题文件夹名字
 theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'               # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'                    # OpenClash包地址
@@ -33,16 +33,16 @@ sed -i "s/192.168.2.2/$lan_ip/g" package/base-files/files/bin/config_generate
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
-echo "修改默认主题"
-sed -i "s/bootstrap/$default_theme/g" feeds/luci/modules/luci-base/root/etc/config/luci
-
-if [ $delete_bootstrap ] ;then
-  echo "去除默认bootstrap主题"
-  sed -i '/\+luci-theme-bootstrap/d' feeds/luci/collections/luci/Makefile
-  sed -i '/\+luci-theme-bootstrap/d' package/feeds/luci/luci/Makefile
-  sed -i '/CONFIG_PACKAGE_luci-theme-bootstrap=y/d' .config
-  sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
-fi
+#echo "修改默认主题"
+#sed -i "s/bootstrap/$default_theme/g" feeds/luci/modules/luci-base/root/etc/config/luci
+#
+#if [ $delete_bootstrap ] ;then
+#  echo "去除默认bootstrap主题"
+#  sed -i '/\+luci-theme-bootstrap/d' feeds/luci/collections/luci/Makefile
+#  sed -i '/\+luci-theme-bootstrap/d' package/feeds/luci/luci/Makefile
+#  sed -i '/CONFIG_PACKAGE_luci-theme-bootstrap=y/d' .config
+#  sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+#fi
 
 echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
