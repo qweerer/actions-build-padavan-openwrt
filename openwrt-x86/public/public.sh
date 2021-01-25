@@ -17,8 +17,8 @@ vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'               # 
 filter_url='https://github.com/destan19/OpenAppFilter.git'                    # AppFilter 地址
 dockerman_url='https://github.com/lisaac/luci-app-dockerman.git'    # package/dockerman
 # passwall_url='git clone https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol 
-allinone_url='git clone https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
-oppackage_url='git clone https://github.com/openwrt/luci.git'                 # package/luciopenwrt
+# allinone_url='git clone https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
+# oppackage_url='git clone https://github.com/openwrt/luci.git'                 # package/luciopenwrt
 
 # 命令
 # echo "修改机器名称"
@@ -102,7 +102,7 @@ echo 'CONFIG_PACKAGE_luci-app-vssr-plus=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-vssr-plus-zh-cn=y'  >> .config
 
 echo '添加adguardhome,京东签到'
-git clone $allinone_url package/lean/allinone
+# git clone $allinone_url package/lean/allinone
 echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
@@ -118,7 +118,7 @@ git clone $dockerman_url package/lean/dockerman
 echo 'CONFIG_PACKAGE_luci-app-dockerman=y' >> .config
 
 echo 'openwrt-官方插件'
-git clone $oppackage_url package/lean/oppackage
+# git clone $oppackage_url package/lean/oppackage
 # echo 'CONFIG_PACKAGE_luci-app-uhttpd=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-app-acme=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-ssl-openssl=y' >> .config
