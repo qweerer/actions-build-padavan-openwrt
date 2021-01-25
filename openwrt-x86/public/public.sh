@@ -12,12 +12,13 @@ openClash_url='https://github.com/vernesong/OpenClash.git'                    # 
 lienol_url='https://github.com/Lienol/openwrt-package.git'                    # Lienol 包地址
 # vssr_url_rely='https://github.com/jerrykuku/lua-maxminddb.git'                # vssr lua-maxminddb依赖
 # vssr_url='https://github.com/jerrykuku/luci-app-vssr.git'                     # vssr地址
-vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'                          # vssr_plus 依赖
-vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'               # vssr_plus 地址
-filter_url='https://github.com/destan19/OpenAppFilter.git'                    # AppFilter 地址
-dockerman_url='https://github.com/lisaac/luci-app-dockerman.git'    # package/dockerman
+vssr_plus_rely='https://github.com/Leo-Jo-My/my.git'                            # vssr_plus 依赖
+vssr_plus='https://github.com/Leo-Jo-My/luci-app-vssr-plus.git'                 # vssr_plus 地址
+filter_url='https://github.com/destan19/OpenAppFilter.git'                       # AppFilter 地址
+dockerman_url='https://github.com/lisaac/luci-app-dockerman.git'                 # package/dockerman
 # passwall_url='git clone https://github.com/xiaorouji/openwrt-passwall.git'    # package/lienol 
-allinone_url='git clone https://github.com/kenzok8/openwrt-packages.git'      # package/kenzok8
+allinone_url='https://github.com/kenzok8/openwrt-packages.git'                  # package/kenzok8
+wrtbwmon_url='https://github.com/Kiougar/luci-wrtbwmon.git'                     #package/wrtbwmon
 # oppackage_url='git clone https://github.com/openwrt/luci.git'                 # package/luciopenwrt
 
 # 命令
@@ -106,6 +107,7 @@ git clone $allinone_url package/lean/allinoness
 echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
 echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
+echo 'CONFIG_PACKAGE_luci-app-advancedsetting' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
 echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
@@ -123,3 +125,7 @@ echo 'openwrt-官方插件'
 # echo 'CONFIG_PACKAGE_luci-app-acme=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-ssl-openssl=y' >> .config
 # echo 'CONFIG_PACKAGE_acme-dnsapi=y' >> .config
+
+echo 'wrtbwmon'
+git clone $wrtbwmon_url package/lean/wrtbwmon
+echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
