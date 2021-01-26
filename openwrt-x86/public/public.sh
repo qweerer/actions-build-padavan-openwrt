@@ -103,17 +103,18 @@ echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
 # echo 'CONFIG_PACKAGE_luci-i18n-vssr-plus-zh-cn=y'  >> .config
 
 echo '添加adguardhome,京东签到'
-git clone $allinone_url package/lean/allinoness
-# echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
-# echo 'CONFIG_PACKAGE_luci-app-advancedsetting' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
+# git clone $allinone_url package/lean/allinoness
+echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
+echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
+echo 'CONFIG_PACKAGE_luci-app-advancedsetting' >> .config
+echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
+echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
+echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
 # echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
-# echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+echo 'CONFIG_PACKAGE_luci-theme-argon_new=y' >> .config
 
 echo 'dockerman'
 git clone $dockerman_url package/lean/dockerman
