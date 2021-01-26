@@ -6,7 +6,7 @@ lan_ip='192.168.2.1'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
 delete_bootstrap=false      # 是否删除默认主题 true 、false
 default_theme='argon_mc1'   # 默认主题 结合主题文件夹名字
-theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'               # 主题地址
+# theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'               # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'                    # OpenClash包地址
 # adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git'   # adguardhome 包地址
 lienol_url='https://github.com/Lienol/openwrt-package.git'                    # Lienol 包地址
@@ -52,9 +52,9 @@ echo 'CONFIG_PACKAGE_luci-app-p910nd=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-sqm=y' >> .config
 echo 'CONFIG_PACKAGE_luci-app-nlbwmon=y' >> .config
 
-echo '添加主题argon'
-git clone $theme_argon package/lean/luci-theme-argon-mc
-echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
+# echo '添加主题argon'
+# git clone $theme_argon package/lean/luci-theme-argon-mc
+# echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 echo '添加OpenClash'
 git clone $openClash_url package/lean/luci-app-openclash
@@ -103,17 +103,17 @@ echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
 # echo 'CONFIG_PACKAGE_luci-i18n-vssr-plus-zh-cn=y'  >> .config
 
 echo '添加adguardhome,京东签到'
-# git clone $allinone_url package/lean/allinoness
-echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
-echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
-echo 'CONFIG_PACKAGE_luci-app-advancedsetting' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
-echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
+git clone $allinone_url package/lean/allinoness
+# echo 'CONFIG_PACKAGE_luci-app-jd-dailybonus=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
+# echo 'CONFIG_PACKAGE_luci-app-advancedsetting' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-atmaterial=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-edge=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-ifit=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-opentomato=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-opentomcat=y' >> .config
+# echo 'CONFIG_PACKAGE_luci-theme-opentopd=y' >> .config
 
 echo 'dockerman'
 git clone $dockerman_url package/lean/dockerman
